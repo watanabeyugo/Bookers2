@@ -1,0 +1,20 @@
+<h2>Edit Profile</h2>
+<%= render 'users/errors', user: @user %>
+<%= form_with model:@user,local:true do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, placeholder:"name"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_field :introduction, placeholder:"introduction"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_image %><br />
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  </div>
+
+  <%= f.submit "Update User" %>
+<% end %>
